@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "./AvailabilityModal.css";
+import "./Availabilitymodal.css";
 
 interface AvailabilityModalProps {
   open: boolean;

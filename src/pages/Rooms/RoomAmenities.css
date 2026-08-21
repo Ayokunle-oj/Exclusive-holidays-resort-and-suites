@@ -1,0 +1,27 @@
+.room-amenities {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 20px;
+}
+
+.room-amenities-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #3a3937;
+}
+
+.room-amenities-icon {
+  color: #4a5a45;
+  font-size: 12px;
+}
+
+@media (max-width: 480px) {
+  .room-amenities {
+    grid-template-columns: 1fr;
+  }
+}

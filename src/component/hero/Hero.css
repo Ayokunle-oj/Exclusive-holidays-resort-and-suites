@@ -1,0 +1,344 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Hero_container {
+  position: relative;
+}
+/* ==========================================================================
+   Booking card inputs — add to your existing booking_card stylesheet.
+   Strips native browser chrome so the date/select fields blend into the
+   .booking_value pill instead of looking like a default form control.
+   ========================================================================== */
+
+.booking_input,
+.booking_select {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  width: 100%;
+}
+
+.booking_input:focus,
+.booking_select:focus {
+  outline: none;
+}
+
+/* Remove the native select dropdown arrow — you already have booking_chevron
+   as a custom arrow, so the default one would show up twice. */
+.booking_select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.booking_select > option {
+  color: black;
+}
+
+/* Safari/Chrome render the date input's calendar icon with its own button.
+   Hide it since booking_icon already covers that visually. */
+.booking_input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.booking_value {
+  position: relative;
+}
+
+.hero_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero_text h2,
+.hero_text p {
+  color: white;
+  text-align: center;
+}
+.hero_text h2 {
+  font-size: 4rem;
+}
+
+.hero_text p {
+  font-size: 1.5rem;
+}
+
+/* ---------- Load-triggered entrance animation ---------- */
+
+.hero_text h2,
+.hero_text p {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+.hero_text p {
+  transition-delay: 0.15s;
+}
+.hero_text.hero_loaded h2,
+.hero_text.hero_loaded p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero_btn {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  transition-delay: 0.3s;
+}
+.hero_btn.hero_loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero_text h2,
+  .hero_text p,
+  .hero_btn {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.hero_btn {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero_book {
+  font-weight: 600;
+  font-size: 1em;
+  padding: 13px 30px;
+  margin: 15px;
+  border: none;
+  background-color: rgb(190, 190, 55);
+  cursor: pointer;
+  transition:
+    background-color 1s ease,
+    transform 1s ease;
+}
+.hero_book:hover {
+  transform: scale(1.1);
+  border: solid rgb(118, 118, 40) 2px;
+  background-color: rgb(234, 234, 71);
+}
+.hero_learn_more {
+  font-weight: 600;
+  font-size: 1em;
+  padding: 13px 30px;
+  margin: 15px;
+  border: solid white 2px;
+  background: none;
+  color: white;
+  cursor: pointer;
+  transition:
+    background-color 1s ease,
+    transform 1s ease;
+}
+.hero_learn_more:hover {
+  transform: scale(1.1);
+  border: solid 2px;
+  background-color: white;
+  color: black;
+}
+
+/* ---------- Booking card ---------- */
+
+.booking_card {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translateX(-50%);
+  background: rgb(44, 43, 43);
+  color: white;
+  width: 70%;
+  height: 130px;
+  z-index: 10;
+}
+.booking_item {
+  font-size: 12px;
+  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 30%;
+  transition:
+    background-color 1s ease,
+    transform 1s ease;
+}
+.booking_item:hover {
+  background: rgb(73, 72, 72);
+}
+
+.booking_value {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-weight: 400;
+  font-size: 13px;
+  color: #cfcfcf;
+}
+
+.booking_icon {
+  flex-shrink: 0;
+}
+
+.booking_chevron {
+  font-size: 10px;
+}
+
+.availability_button {
+  padding: 20px 40px;
+  font-weight: 600;
+  border: none;
+  background: rgb(166, 121, 39);
+  color: white;
+  cursor: pointer;
+  transition:
+    background-color 1s ease,
+    transform 1s ease;
+}
+.availability_button:hover {
+  background: rgb(220, 161, 51);
+}
+.availability_button span {
+  display: block;
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 1024px) {
+  .hero_text h2 {
+    font-size: 3rem;
+  }
+  .hero_text p {
+    font-size: 1.15rem;
+    padding: 0 30px;
+  }
+
+  .booking_card {
+    width: 85%;
+  }
+  .booking_item {
+    font-size: 11px;
+  }
+  .booking_value {
+    font-size: 12px;
+  }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 768px) {
+  .hero_text h2 {
+    font-size: 2.2rem;
+    padding: 0 20px;
+  }
+  .hero_text p {
+    font-size: 1rem;
+    padding: 0 24px;
+  }
+
+  .hero_btn {
+    flex-direction: row;
+    margin-top: 40px;
+  }
+
+  .hero_book {
+    padding: 5px 30px;
+    max-width: 280px;
+    margin: 8px auto;
+    text-align: center;
+  }
+
+  .booking_card {
+    flex-direction: column;
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    margin: -70px auto 0;
+    width: 90%;
+    height: auto;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .booking_item {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 16px 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .booking_item:hover {
+    background: rgb(73, 72, 72);
+  }
+
+  .booking_item h2 {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .booking_value {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+
+  .availability_button {
+    width: 100%;
+    padding: 18px;
+  }
+  .availability_button span {
+    display: inline;
+  }
+}
+
+/* ---------- Small phones ---------- */
+
+@media (max-width: 480px) {
+  .hero_text h2 {
+    font-size: 1.7rem;
+  }
+  .hero_text p {
+    font-size: 0.85rem;
+  }
+
+  .booking_card {
+    width: 94%;
+    margin-top: -50px;
+  }
+}

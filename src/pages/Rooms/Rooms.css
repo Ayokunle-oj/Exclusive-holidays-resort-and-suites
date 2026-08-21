@@ -1,0 +1,387 @@
+/* ==========================================================================
+   Exclusive Holiday & Suites — Rooms Section
+   Palette matches the Restaurant section: cream, charcoal, gold accent.
+   Note: .btn / .btn-gold / .btn-outline / .btn-outline-light are duplicated
+   here so this file works standalone. If Rooms.tsx lives on the same page
+   as the Restaurant section and already loads those classes, feel free to
+   delete the duplicates below.
+   ========================================================================== */
+
+.rooms {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #2c2b2b;
+  background-color: #f6f1e7;
+  overflow: hidden;
+}
+
+.rooms-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #a8824c;
+  margin-bottom: 16px;
+}
+
+.rooms-eyebrow-light {
+  color: #d9bd8a;
+}
+
+.rooms-heading {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 46px;
+  line-height: 1.15;
+  font-weight: 400;
+  color: #2c2b2b;
+  margin: 0 0 20px 0;
+}
+
+.rooms-heading-light {
+  color: #f6f1e7;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-gold {
+  background-color: #c9a463;
+  color: #2c2b2b;
+}
+
+.btn-gold:hover {
+  background-color: #b89250;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #2c2b2b;
+  border-color: #2c2b2b;
+}
+
+.btn-outline:hover {
+  background-color: #2c2b2b;
+  color: #f6f1e7;
+}
+
+.btn-outline-light {
+  background-color: transparent;
+  color: #f6f1e7;
+  border-color: #d9bd8a;
+}
+
+.btn-outline-light:hover {
+  background-color: #d9bd8a;
+  color: #2c2b2b;
+}
+
+/* ==========================================================================
+   SECTION 1 — Hero
+   ========================================================================== */
+
+.rooms-hero {
+  position: relative;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+}
+
+.rooms-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.rooms-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(28, 27, 26, 0.5);
+}
+
+.rooms-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+}
+
+.rooms-hero-text {
+  font-size: 17px;
+  line-height: 1.75;
+  color: #ece9e2;
+  max-width: 480px;
+  margin: 0 0 36px 0;
+}
+
+/* ==========================================================================
+   SECTION 3 — Explore rooms intro
+   ========================================================================== */
+
+.rooms-intro {
+  text-align: center;
+  max-width: 620px;
+  margin: 120px auto 70px auto;
+  padding: 0 24px;
+}
+
+.rooms-intro .rooms-heading {
+  margin: 0 0 18px 0;
+}
+
+.rooms-intro-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #514f4c;
+}
+
+/* ==========================================================================
+   SECTION 4 — Room listings (swipeable card stack)
+   Card + detail styling now lives in RoomCard.css, RoomSwipe.css,
+   RoomDetails.css, RoomGallery.css and RoomAmenities.css. This is just the
+   section wrapper.
+   ========================================================================== */
+
+.rooms-listing {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 80px 110px 80px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   SECTION 5 — Benefits
+   ========================================================================== */
+
+.rooms-benefits {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px 110px 80px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  border-top: 1px solid #e2dbc8;
+  padding-top: 70px;
+}
+
+.benefit-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.benefit-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #efe8d8;
+  color: #a8824c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.benefit-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2c2b2b;
+  margin: 0;
+}
+
+.benefit-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #7d7a74;
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 6 — Final promotional section
+   ========================================================================== */
+
+.rooms-promo {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+}
+
+.rooms-promo-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.rooms-promo-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(24, 23, 22, 0.55);
+}
+
+.rooms-promo-content {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  padding: 60px 80px;
+}
+
+.rooms-promo-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #ece9e2;
+  margin: 0 0 32px 0;
+}
+
+.rooms-promo-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Scroll reveal animations
+   ========================================================================== */
+
+[data-reveal] {
+  opacity: 0;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+  will-change: transform, opacity;
+}
+
+[data-reveal="up"] {
+  transform: translateY(50px);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.stagger-1 {
+  transition-delay: 0.05s;
+}
+
+.stagger-2 {
+  transition-delay: 0.12s;
+}
+
+.stagger-3 {
+  transition-delay: 0.19s;
+}
+
+.stagger-4 {
+  transition-delay: 0.26s;
+}
+
+.stagger-5 {
+  transition-delay: 0.33s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ==========================================================================
+   Responsiveness
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .rooms-hero {
+    padding: 0 48px;
+  }
+
+  .rooms-listing,
+  .rooms-benefits {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .rooms-benefits {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 40px;
+  }
+
+  .rooms-heading {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 900px) {
+  .rooms-hero {
+    flex-direction: column;
+    justify-content: center;
+    padding: 140px 40px 100px 40px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .rooms-intro {
+    margin: 80px auto 50px auto;
+  }
+
+  .rooms-heading {
+    font-size: 30px;
+  }
+
+  .rooms-listing,
+  .rooms-benefits {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .rooms-benefits {
+    grid-template-columns: 1fr;
+    padding-top: 50px;
+  }
+
+  .rooms-promo-content {
+    padding: 48px 28px;
+    max-width: 100%;
+  }
+
+  .rooms-promo-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

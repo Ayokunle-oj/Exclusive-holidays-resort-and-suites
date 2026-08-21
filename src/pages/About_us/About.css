@@ -1,0 +1,511 @@
+/* ==========================================================================
+   Exclusive Holiday Resort & Suites — About Page
+   Palette:
+     Background (warm off-white): #FAF7F1
+     Text (charcoal):             #2B2823
+     Muted text:                  #6C665C
+     Accent (muted gold):         #B08D57
+     Dark section background:     #1C1A17
+     White:                       #FFFFFF
+     Border:                      #E6E0D4
+   ========================================================================== */
+
+.about-page {
+  background-color: #faf7f1;
+  color: #2b2823;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.about-eyebrow {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #b08d57;
+  margin-bottom: 14px;
+}
+
+.about-eyebrow-center {
+  text-align: center;
+}
+
+.about-heading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #201e1a;
+  margin: 0 0 22px 0;
+}
+
+.about-heading-center {
+  text-align: center;
+}
+
+.about-text {
+  font-size: 15.5px;
+  line-height: 1.85;
+  color: #57524a;
+  margin: 0 0 28px 0;
+}
+
+.about-btn {
+  display: inline-block;
+  padding: 14px 34px;
+  background-color: #1c1a17;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  border: 1px solid #1c1a17;
+  transition: 0.3s ease;
+}
+
+.about-btn:hover {
+  background-color: #b08d57;
+  border-color: #b08d57;
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   1. ABOUT HERO
+   ========================================================================== */
+
+.about-hero {
+  position: relative;
+  height: 440px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: about-fade-in 0.8s ease both;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(18, 16, 14, 0.55);
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.about-hero-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #d9c9a8;
+  margin-bottom: 16px;
+}
+
+.about-hero-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 44px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  max-width: 700px;
+}
+
+.about-hero-breadcrumb {
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #e7e2d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.about-hero-breadcrumb a {
+  color: #e7e2d6;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.about-hero-breadcrumb a:hover {
+  color: #b08d57;
+}
+
+.about-hero-breadcrumb-divider {
+  color: #b08d57;
+}
+
+/* ==========================================================================
+   2. ABOUT THE HOTEL
+   ========================================================================== */
+
+.about-hotel {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 100px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.about-hotel-image-wrap {
+  overflow: hidden;
+}
+
+.about-hotel-image {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+  transition: 0.3s ease;
+}
+
+.about-hotel-image-wrap:hover .about-hotel-image {
+  transform: scale(1.04);
+}
+
+.about-hotel-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-hotel-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-bottom: 34px;
+}
+
+.about-hotel-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  color: #57524a;
+}
+
+.about-hotel-meta-item a {
+  color: #57524a;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.about-hotel-meta-item a:hover {
+  color: #b08d57;
+}
+
+.about-icon {
+  color: #b08d57;
+  font-size: 15px;
+}
+
+/* ==========================================================================
+   3. OUR SERVICES
+   ========================================================================== */
+
+.about-services {
+  position: relative;
+  background-color: #1c1a17;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 110px 24px;
+}
+
+.about-services-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(15, 13, 11, 0.82);
+}
+
+.about-services-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.about-services .about-heading-center {
+  color: #ffffff;
+}
+
+.about-services-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 22px;
+}
+
+.about-service-card {
+  background-color: #ffffff;
+  padding: 40px 24px;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: 0.3s ease;
+}
+
+.about-service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+}
+
+.about-service-icon {
+  font-size: 30px;
+  color: #b08d57;
+  margin-bottom: 20px;
+}
+
+.about-service-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #201e1a;
+  margin: 0 0 12px 0;
+}
+
+.about-service-description {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #6c665c;
+  margin: 0 0 18px 0;
+}
+
+.about-service-link {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #b08d57;
+  text-decoration: none;
+  border-bottom: 1px solid #b08d57;
+  padding-bottom: 3px;
+  transition: 0.3s ease;
+}
+
+.about-service-link:hover {
+  color: #201e1a;
+  border-color: #201e1a;
+}
+
+/* ==========================================================================
+   4. MEET OUR TEAM
+   ========================================================================== */
+
+.about-team {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 110px 24px;
+  text-align: center;
+}
+
+.about-team-intro {
+  max-width: 560px;
+  margin: 0 auto 56px auto;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #6c665c;
+}
+
+.about-team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 34px;
+}
+
+.about-team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-team-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  transition: 0.3s ease;
+}
+
+.about-team-card:hover .about-team-photo {
+  transform: scale(1.03);
+}
+
+.about-team-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: #201e1a;
+  margin: 0 0 6px 0;
+}
+
+.about-team-position {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  color: #b08d57;
+  margin: 0;
+}
+
+/* ==========================================================================
+   5. CALL TO ACTION
+   ========================================================================== */
+
+.about-cta {
+  background-color: #1c1a17;
+  text-align: center;
+  padding: 100px 24px;
+}
+
+.about-cta-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0 0 18px 0;
+}
+
+.about-cta-text {
+  font-size: 15px;
+  color: #cfc9bc;
+  max-width: 520px;
+  margin: 0 auto 38px auto;
+  line-height: 1.8;
+}
+
+.about-cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.about-btn-primary {
+  background-color: #b08d57;
+  border-color: #b08d57;
+}
+
+.about-btn-primary:hover {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #1c1a17;
+}
+
+.about-btn-outline {
+  background-color: transparent;
+  border-color: #6c665c;
+}
+
+.about-btn-outline:hover {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #1c1a17;
+}
+
+/* ==========================================================================
+   Animation
+   ========================================================================== */
+
+@keyframes about-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   Responsive — Tablet
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .about-hotel {
+    gap: 44px;
+    padding: 80px 24px;
+  }
+
+  .about-services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .about-team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .about-hero-title {
+    font-size: 36px;
+  }
+}
+
+/* ==========================================================================
+   Responsive — Mobile
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .about-hero {
+    height: 320px;
+  }
+
+  .about-hero-title {
+    font-size: 28px;
+  }
+
+  .about-hotel {
+    grid-template-columns: 1fr;
+    padding: 64px 20px;
+    gap: 32px;
+  }
+
+  .about-hotel-image {
+    height: 320px;
+  }
+
+  .about-heading {
+    font-size: 26px;
+  }
+
+  .about-services {
+    padding: 70px 20px;
+  }
+
+  .about-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-team {
+    padding: 70px 20px;
+  }
+
+  .about-team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-cta {
+    padding: 70px 20px;
+  }
+
+  .about-cta-buttons {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .about-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

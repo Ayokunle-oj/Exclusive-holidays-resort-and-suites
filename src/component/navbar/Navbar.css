@@ -1,0 +1,230 @@
+/* ---------- Shared navbar layout ---------- */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 60px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.navbar-logo img {
+  display: block;
+  max-width: 150px;
+  width: 50px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .navbar-logo img {
+    max-width: 120px;
+  }
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
+  padding-bottom: 6px;
+}
+
+.navbar-link:hover {
+  opacity: 0.75;
+}
+
+/* underline that grows outward from the center on hover */
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.navbar-link:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.navbar-link-active {
+  color: #c0453a;
+}
+
+.navbar-chevron {
+  font-size: 10px;
+  margin-left: 5px;
+}
+
+/* ---------- Transparent navbar (over the hero image) ---------- */
+
+.navbar-transparent {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-transparent.navbar-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---------- Dark navbar (slides down on scroll) ---------- */
+
+.navbar-dark {
+  background-color: #17191a;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+}
+
+.navbar-dark.navbar-visible {
+  transform: translateY(0);
+}
+
+.navbar-dark .navbar-link {
+  color: #e6e6e6;
+}
+
+/* ---------- Hamburger icon ---------- */
+
+.navbar-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.navbar-hamburger-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+/* ---------- Mobile menu overlay ---------- */
+
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1001;
+}
+
+.mobile-menu-overlay-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------- Mobile menu panel (slides in from the right) ---------- */
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  max-width: 80%;
+  height: 100%;
+  background-color: #17191a;
+  padding: 80px 30px 40px 30px;
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+  z-index: 1002;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-open {
+  transform: translateX(0);
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.mobile-menu-link {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* ---------- Mobile breakpoint ---------- */
+
+@media (max-width: 768px) {
+  .navbar-inner {
+    padding: 18px 24px;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-hamburger {
+    display: flex;
+  }
+}

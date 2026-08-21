@@ -1,0 +1,235 @@
+/* ===== Footer Section ===== */
+
+.footer {
+  background-color: rgb(44, 43, 43);
+  color: #f2f0ec;
+  padding: 70px 40px 0 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 50px;
+  padding-bottom: 50px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Column 1: Hotel Info ===== */
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0 0 18px 0;
+  color: #ffffff;
+}
+
+.footer-description {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #b8b6b2;
+  margin: 0;
+  max-width: 280px;
+}
+
+/* ===== Column Headings ===== */
+
+.footer-heading {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0 0 22px 0;
+  color: #ffffff;
+}
+
+/* ===== Column 2: Quick Links ===== */
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-links .a_tag {
+  position: relative;
+  display: inline-block;
+  color: #b8b6b2;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.footer-links .a_tag::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background-color: #c9a463;
+  transition: width 0.3s ease;
+}
+
+.footer-links .a_tag:hover {
+  color: #c9a463;
+}
+
+.footer-links .a_tag:hover::after {
+  width: 100%;
+}
+
+.footer-dropdown-arrow {
+  font-size: 12px;
+  margin-left: 2px;
+}
+
+/* ===== Column 3: Social Media ===== */
+
+.footer-socials {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #5a5858;
+  border-radius: 50%;
+  color: #f2f0ec;
+  text-decoration: none;
+  font-size: 16px;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.footer-social-icon:hover {
+  transform: translateY(-3px) scale(1.08);
+  color: #c9a463;
+  border-color: #c9a463;
+}
+
+/* ===== Column 4: Contact / Email ===== */
+
+.footer-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #b8b6b2;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  word-break: break-word;
+}
+
+.footer-email i {
+  color: #c9a463;
+  font-size: 15px;
+}
+
+.footer-email:hover {
+  color: #c9a463;
+}
+
+/* ===== Bottom Footer ===== */
+
+.footer-bottom {
+  border-top: 1px solid #5a5858;
+  padding: 22px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.footer-copyright {
+  margin: 0;
+  font-size: 13px;
+  color: #a8a6a2;
+}
+
+.footer-credit {
+  margin: 0;
+  font-size: 13px;
+  color: #a8a6a2;
+}
+
+.footer-credit a {
+  color: #f2f0ec;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-credit a:hover {
+  color: #c9a463;
+  text-decoration: underline;
+}
+
+/* ===== Responsive: Tablet ===== */
+
+@media (max-width: 992px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 40px;
+  }
+}
+
+/* ===== Responsive: Mobile ===== */
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 50px 24px 0 24px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    row-gap: 36px;
+  }
+
+  .footer-description {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .footer-links {
+    align-items: center;
+  }
+
+  .footer-links a::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-email {
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

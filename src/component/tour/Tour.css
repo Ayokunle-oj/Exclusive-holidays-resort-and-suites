@@ -1,0 +1,124 @@
+/* ===== Tour Section ===== */
+
+.tour {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Dark Overlay ===== */
+
+.tour-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+/* ===== Centered Content ===== */
+
+.tour-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* ===== Small Title ===== */
+
+.tour-small-title {
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+}
+
+/* ===== Main Title ===== */
+
+.tour-title {
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 5rem;
+  line-height: 1.2;
+  margin: 0 0 45px 0;
+}
+
+/* ===== Play Button ===== */
+
+.tour-play-btn {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: none;
+  background-color: #c9a463;
+  color: #ffffff;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.tour-play-btn:hover {
+  transform: scale(1.08);
+  background-color: #b8863a;
+}
+
+/* ===== Responsive: Tablet ===== */
+
+@media (max-width: 992px) {
+  .tour-title {
+    font-size: 3.8rem;
+  }
+
+  .tour-play-btn {
+    width: 95px;
+    height: 95px;
+    font-size: 24px;
+  }
+}
+
+/* ===== Responsive: Mobile ===== */
+
+@media (max-width: 600px) {
+  .tour {
+    min-height: 500px;
+  }
+
+  .tour-small-title {
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+  }
+
+  .tour-title {
+    font-size: 3rem;
+    margin-bottom: 32px;
+  }
+
+  .tour-play-btn {
+    width: 80px;
+    height: 80px;
+    font-size: 20px;
+  }
+}

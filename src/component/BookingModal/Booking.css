@@ -1,0 +1,431 @@
+/* Exclusive Holiday & Suites — Booking Page
+   Palette:
+   #10201d  ink        (dark header background)
+   #f8f4ec  cream       (page background)
+   #fffdf9  card white  (form + summary cards)
+   #b3873f  gold        (primary accent)
+   #96702f  gold-deep   (hover / pressed)
+   #241f18  charcoal    (primary text)
+   #6b6255  taupe       (secondary text)
+   #e4dbc9  hairline    (borders/dividers)
+   #a8402e  rust        (error state)
+   #4f6b52  sage        (success state)
+*/
+
+.booking-page {
+  background-color: #f8f4ec;
+  min-height: 100vh;
+  padding: 64px 24px 96px;
+  box-sizing: border-box;
+}
+
+.booking-page * {
+  box-sizing: border-box;
+}
+
+/* ---------- Header ---------- */
+
+.booking-header {
+  max-width: 720px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.booking-eyebrow {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #b3873f;
+  margin: 0 0 12px;
+}
+
+.booking-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 44px;
+  font-weight: 400;
+  color: #241f18;
+  margin: 0 0 16px;
+  letter-spacing: 0.01em;
+}
+
+.booking-subtitle {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #6b6255;
+  margin: 0;
+}
+
+/* ---------- Layout ---------- */
+
+.booking-layout {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .booking-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Form card ---------- */
+
+.booking-form-card {
+  background-color: #fffdf9;
+  border: 1px solid #e4dbc9;
+  border-radius: 14px;
+  padding: 40px;
+  box-shadow: 0 20px 45px rgba(36, 31, 24, 0.06);
+}
+
+@media (max-width: 560px) {
+  .booking-form-card {
+    padding: 28px 20px;
+  }
+}
+
+.booking-card-heading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #241f18;
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e4dbc9;
+}
+
+.booking-card-heading-spaced {
+  margin-top: 36px;
+}
+
+.booking-field {
+  margin-bottom: 20px;
+}
+
+.booking-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 480px) {
+  .booking-field-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.booking-field label {
+  display: block;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #6b6255;
+  margin-bottom: 8px;
+}
+
+.booking-field input,
+.booking-field select,
+.booking-field textarea {
+  width: 100%;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  color: #241f18;
+  background-color: #fffdf9;
+  border: 1px solid #d9cfba;
+  border-radius: 8px;
+  padding: 13px 14px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.booking-field textarea {
+  resize: vertical;
+  min-height: 96px;
+  font-family: inherit;
+}
+
+.booking-field input::placeholder,
+.booking-field textarea::placeholder {
+  color: #a89c86;
+}
+
+.booking-field input:focus,
+.booking-field select:focus,
+.booking-field textarea:focus {
+  outline: none;
+  border-color: #b3873f;
+  box-shadow: 0 0 0 3px rgba(179, 135, 63, 0.16);
+}
+
+.booking-field input[aria-invalid="true"],
+.booking-field select[aria-invalid="true"] {
+  border-color: #a8402e;
+}
+
+.booking-error {
+  display: block;
+  margin-top: 6px;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  color: #a8402e;
+}
+
+/* ---------- Buttons ---------- */
+
+.booking-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 12px;
+  padding: 16px 24px;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #fffdf9;
+  background-color: #b3873f;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.booking-primary-btn:hover {
+  background-color: #96702f;
+  transform: translateY(-1px);
+}
+
+.booking-primary-btn:active {
+  transform: translateY(0);
+}
+
+.booking-primary-btn:focus-visible {
+  outline: 3px solid #241f18;
+  outline-offset: 2px;
+}
+
+.booking-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #241f18;
+  background-color: transparent;
+  border: 1px solid #d9cfba;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.booking-secondary-btn:hover {
+  border-color: #b3873f;
+  background-color: #f8f4ec;
+}
+
+.booking-secondary-btn:focus-visible,
+.booking-link-btn:focus-visible {
+  outline: 3px solid #241f18;
+  outline-offset: 2px;
+}
+
+.booking-link-btn {
+  width: auto;
+}
+
+/* ---------- Summary card (signature element) ---------- */
+
+.booking-summary-card {
+  position: relative;
+  background-color: #10201d;
+  border-radius: 14px;
+  padding: 40px 32px;
+  color: #f8f4ec;
+  overflow: hidden;
+}
+
+.booking-summary-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #b3873f;
+}
+
+.booking-summary-tag {
+  position: absolute;
+  top: 24px;
+  right: -34px;
+  transform: rotate(45deg);
+  background-color: #b3873f;
+  color: #10201d;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 40px;
+}
+
+.booking-summary-heading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 400;
+  margin: 0 0 24px;
+  padding-right: 40px;
+}
+
+.booking-summary-list {
+  margin: 0;
+}
+
+.booking-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+.booking-summary-row-block {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.booking-summary-row dt {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #a99f8d;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.booking-summary-row dd {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  color: #f8f4ec;
+  margin: 0;
+  text-align: right;
+}
+
+.booking-summary-row-block dd {
+  text-align: left;
+  line-height: 1.6;
+}
+
+.booking-summary-empty {
+  color: #7d7566;
+  font-style: italic;
+}
+
+.booking-summary-divider {
+  height: 1px;
+  background-color: rgba(248, 244, 236, 0.14);
+  margin: 4px 0;
+}
+
+.booking-summary-note {
+  margin: 24px 0 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #a99f8d;
+}
+
+@media (max-width: 860px) {
+  .booking-summary-card {
+    order: 2;
+  }
+  .booking-form-card {
+    order: 1;
+  }
+}
+
+/* ---------- Confirmation state ---------- */
+
+.booking-confirmation {
+  max-width: 520px;
+  margin: 40px auto;
+  background-color: #fffdf9;
+  border: 1px solid #e4dbc9;
+  border-radius: 14px;
+  padding: 56px 40px;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(36, 31, 24, 0.06);
+}
+
+.booking-confirmation-mark {
+  width: 56px;
+  height: 56px;
+  line-height: 56px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  background-color: #4f6b52;
+  color: #fffdf9;
+  font-size: 24px;
+}
+
+.booking-confirmation-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #241f18;
+  margin: 0 0 16px;
+}
+
+.booking-confirmation-text {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #6b6255;
+  margin: 0 0 32px;
+}
+
+.booking-confirmation-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (min-width: 480px) {
+  .booking-confirmation-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+}

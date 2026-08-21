@@ -1,0 +1,264 @@
+/* ===== Location Section ===== */
+
+.location {
+  background-color: #f7f3ee;
+  padding: 90px 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== Header ===== */
+
+.location-header {
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+
+.location-label {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #b8863a;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #b8863a;
+  margin-bottom: 18px;
+}
+
+.location-heading {
+  font-size: 42px;
+  font-weight: 600;
+  color: #2c2b2b;
+  margin: 0 0 18px 0;
+}
+
+.location-subtext {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #5f5c58;
+  margin: 0;
+}
+
+/* ===== Location Card ===== */
+
+.location-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* ===== Left Information Panel ===== */
+
+.location-info {
+  flex: 0 0 42%;
+  padding: 45px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.location-info-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.location-icon-circle {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #b8863a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.location-hotel-label {
+  margin: 0 0 4px 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #b8863a;
+}
+
+.location-subheading {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #2c2b2b;
+}
+
+.location-address {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #3d3b38;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #ece8e2;
+}
+
+.location-address i {
+  color: #b8863a;
+  margin-top: 3px;
+}
+
+.location-description {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #5f5c58;
+  margin: 0 0 28px 0;
+}
+
+/* ===== Contact Info ===== */
+
+.location-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.location-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.location-contact-icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #b8863a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.location-contact-label {
+  margin: 0 0 2px 0;
+  font-size: 13px;
+  color: #8a8783;
+}
+
+.location-contact-value {
+  font-size: 15px;
+  color: #2c2b2b;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  word-break: break-word;
+}
+
+.location-contact-value:hover {
+  color: #b8863a;
+}
+
+/* ===== Get Directions Button ===== */
+
+.location-directions-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  align-self: flex-start;
+  background-color: #b8863a;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 15px 28px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.location-directions-btn i {
+  transition: transform 0.3s ease;
+}
+
+.location-directions-btn:hover {
+  background-color: #a3762f;
+}
+
+.location-directions-btn:hover i {
+  transform: translateX(4px);
+}
+
+/* ===== Google Map ===== */
+
+.location-map {
+  flex: 0 0 58%;
+  min-height: 480px;
+}
+
+.location-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ===== Responsive: Tablet ===== */
+
+@media (max-width: 992px) {
+  .location {
+    padding: 70px 24px;
+  }
+
+  .location-info {
+    flex: 0 0 46%;
+    padding: 36px 28px;
+  }
+
+  .location-map {
+    flex: 0 0 54%;
+  }
+}
+
+/* ===== Responsive: Mobile ===== */
+
+@media (max-width: 768px) {
+  .location-card {
+    flex-direction: column;
+    border-radius: 12px;
+  }
+
+  .location-info {
+    flex: 1 1 auto;
+    padding: 32px 24px;
+  }
+
+  .location-map {
+    flex: 1 1 auto;
+    min-height: 350px;
+    height: 380px;
+  }
+
+  .location-heading {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .location-info-top {
+    flex-wrap: wrap;
+  }
+
+  .location-directions-btn {
+    width: 100%;
+  }
+}

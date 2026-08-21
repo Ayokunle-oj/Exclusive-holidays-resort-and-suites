@@ -1,0 +1,38 @@
+.scroll-anim {
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.scroll-fade-up {
+  opacity: 0;
+  transform: translateY(50px);
+}
+.scroll-fade-down {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+.scroll-fade-left {
+  opacity: 0;
+  transform: translateX(50px);
+}
+.scroll-fade-right {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+.scroll-fade {
+  opacity: 0;
+}
+
+.scroll-anim.scroll-show {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-anim {
+    transition: opacity 0.3s ease;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

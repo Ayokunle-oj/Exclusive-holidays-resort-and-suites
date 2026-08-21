@@ -15,15 +15,21 @@
   padding: 20px;
   background-color: rgba(16, 32, 29, 0);
   backdrop-filter: blur(0px);
+  visibility: hidden;
+  pointer-events: none;
   transition:
     background-color 280ms ease,
-    backdrop-filter 280ms ease;
+    backdrop-filter 280ms ease,
+    visibility 0s linear 280ms;
   box-sizing: border-box;
 }
 
 .availability_modal_overlay.availability_modal_visible {
   background-color: rgba(16, 32, 29, 0.55);
   backdrop-filter: blur(3px);
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
 }
 
 .availability_modal_card {

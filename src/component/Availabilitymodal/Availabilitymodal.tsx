@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./AvailabilityModal.css";
 
 interface AvailabilityModalProps {
@@ -22,8 +22,6 @@ function formatDisplayDate(iso: string): string {
   });
 }
 
-const TRANSITION_MS = 280;
-
 function AvailabilityModal({
   open,
   onClose,
@@ -33,40 +31,20 @@ function AvailabilityModal({
   roomType,
   guests,
 }: AvailabilityModalProps) {
-  // "rendered" keeps the modal mounted long enough to play the closing
-  // transition; "visible" toggles the actual enter/exit CSS state.
-  const [rendered, setRendered] = useState(false);
-  const [visible, setVisible] = useState(false);
-
   useEffect(() => {
-    if (open) {
-      setRendered(true);
-      const raf = requestAnimationFrame(() => setVisible(true));
-      return () => cancelAnimationFrame(raf);
-    }
-
-    setVisible(false);
-    const hideTimer = setTimeout(() => setRendered(false), TRANSITION_MS);
-    return () => clearTimeout(hideTimer);
-  }, [open]);
-
-  useEffect(() => {
-    if (!rendered) return;
+    if (!open) return;
 
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === "Escape") onClose();
     }
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [rendered, onClose]);
-
-  if (!rendered) return null;
+  }, [open, onClose]);
 
   return (
     <div
-      className={`availability_modal_overlay${
-        visible ? " availability_modal_visible" : ""
-      }`}
+      className={`availability_modal_overlay${open ? " availability_modal_visible" : ""}`}
+      aria-hidden={!open}
       onClick={onClose}
     >
       <div

@@ -17,7 +17,15 @@ interface RoomCardProps {
 // lives in RoomDetails, not here.
 const RoomCard = forwardRef<HTMLDivElement, RoomCardProps>(
   (
-    { room, style, isActive, onPointerDown, onPointerMove, onPointerUp, onSeeDetails },
+    {
+      room,
+      style,
+      isActive,
+      onPointerDown,
+      onPointerMove,
+      onPointerUp,
+      onSeeDetails,
+    },
     ref,
   ) => {
     return (
@@ -31,7 +39,14 @@ const RoomCard = forwardRef<HTMLDivElement, RoomCardProps>(
         onPointerCancel={isActive ? onPointerUp : undefined}
       >
         <div className="room-stack-card-image">
-          <img src={room.image} alt={room.name} draggable={false} />
+          <img
+            src={room.image}
+            alt={room.name}
+            draggable={false}
+            loading="lazy"
+            width={700}
+            height={520}
+          />
         </div>
         <div className="room-stack-card-body">
           <h3 className="room-stack-card-name">{room.name}</h3>

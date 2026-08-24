@@ -1,7 +1,7 @@
 import "./Hero.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import pexels_alley_chien from "../../assets/pexels-louie-alma.jpg";
+import pexels_alley_chien from "../../assets/pexels-louie-alma.webp";
 import AvailabilityModal from "../Availabilitymodal/Availabilitymodal";
 
 function Hero() {

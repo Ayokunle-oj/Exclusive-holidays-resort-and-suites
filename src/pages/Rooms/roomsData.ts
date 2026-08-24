@@ -1,6 +1,6 @@
-import standardRoomImg from "../../assets/Standard .jpg";
-import premiumRoomImg from "../../assets/deluxe .jpg";
-import deluxeRoomImg from "../../assets/permium.jpg";
+import standardRoomImg from "../../assets/Standard.webp";
+import premiumRoomImg from "../../assets/deluxe.webp";
+import deluxeRoomImg from "../../assets/permium.webp";
 
 export interface Room {
   name: string;

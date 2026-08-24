@@ -24,22 +24,32 @@
 
 .testimonials-track {
   display: flex;
-  gap: 16px;
   transition: transform 0.6s ease;
 }
 
-/* ===== Review Card ===== */
+/* ===== Slide slot =====
+   This carries the exact percentage width the carousel math relies
+   on. Spacing lives in its padding (inside box-sizing: border-box),
+   never in margin/gap — those add width outside the percentage and
+   throw off the transform math, which is what broke mobile. */
 
-/* ===== Review Card (merged, single source of truth) ===== */
+.testimonial-slide {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  padding: 0 8px;
+}
+
+/* ===== Review Card (visual box, sits inside the slide slot) ===== */
 
 .testimonial-card {
-  flex-shrink: 0;
   box-sizing: border-box;
+  height: 100%;
   border: 1px solid #ece8e2;
   border-radius: 12px;
   padding: 28px 24px 32px 24px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
 }
+
 .testimonial-avatar-wrapper {
   position: relative;
   width: 84px;
@@ -111,16 +121,6 @@
   line-height: 1.6;
   color: #4a4844;
   margin: 0;
-}
-
-/* ===== Card container background/border (applied via wrapper) ===== */
-
-.testimonial-card {
-  border: 1px solid #ece8e2;
-  border-radius: 12px;
-  padding: 28px 24px 32px 24px;
-  margin: 0 8px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
 }
 
 /* ===== Arrow Buttons ===== */

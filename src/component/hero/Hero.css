@@ -75,6 +75,7 @@
 .hero_text p {
   color: white;
   text-align: center;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 .hero_text h2 {
   font-size: 4rem;

@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
-import pexels_alley_chien from "../../assets/pexels_alley_chien.jpg";
+import pexels_alley_chien from "../../assets/pexels_alley_chien.webp";
 import "./Tour.css";
 
 function Tour() {

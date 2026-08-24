@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import exclusive_holiday from "../../assets/exclusive_holiday.png";
-import exclusive_holiday_white from "../../assets/exclusive_holiday_white.png";
+import exclusive_holiday from "../../assets/exclusive_holiday.webp";
+import exclusive_holiday_white from "../../assets/exclusive_holiday_white.webp";
 
 import "./Navbar.css";
 
@@ -42,7 +42,6 @@ const Navbar: React.FC = () => {
   const navLinks = [
     { label: "HOME", Link: "/", hasDropdown: false },
     { label: "ROOMS", Link: "/room", hasDropdown: true },
-    // { label: "EVENTS", Link: "/event", hasDropdown: false },
     { label: "RESTO & BAR", Link: "/resto", hasDropdown: false },
     { label: "ABOUT", Link: "/about", hasDropdown: false },
     { label: "CONTACT", Link: "/contact", hasDropdown: false },
@@ -58,7 +57,9 @@ const Navbar: React.FC = () => {
       >
         <div className="navbar-inner">
           <div className="navbar-logo">
-            <img src={exclusive_holiday} alt="" />
+            <Link to="/">
+              <img src={exclusive_holiday} alt="Exclusive Holiday" />
+            </Link>
           </div>
 
           <nav className="navbar-links">
@@ -91,10 +92,12 @@ const Navbar: React.FC = () => {
       >
         <div className="navbar-inner">
           <div className="navbar-logo">
-            <img
-              src={isScrolled ? exclusive_holiday_white : exclusive_holiday}
-              alt="Exclusive Holiday"
-            />
+            <Link to="/">
+              <img
+                src={isScrolled ? exclusive_holiday_white : exclusive_holiday}
+                alt="Exclusive Holiday"
+              />
+            </Link>
           </div>
 
           <nav className="navbar-links">

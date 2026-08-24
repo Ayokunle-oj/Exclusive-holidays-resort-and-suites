@@ -4,7 +4,7 @@ import "./Booking.css";
 
 // Replace with the hotel's real WhatsApp number in international format
 // (no +, no spaces, no dashes). Example: 08012345678 -> 2348012345678
-const WHATSAPP_NUMBER = "234XXXXXXXXXX";
+const WHATSAPP_NUMBER = "2349029742091";
 
 const ROOM_OPTIONS = ["Standard Room", "Premium Room", "Deluxe Room"];
 

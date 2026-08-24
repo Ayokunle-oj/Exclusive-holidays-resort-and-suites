@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import "./Resto.css";
 
 // Replace these with real photos of the bar/lounge when available.
-import barHeroImg from "../../assets/bar-hero.jpg";
-import barDrinksImg from "../../assets/bar-drinks.jpg";
-import barLoungeImg from "../../assets/bar-lounge.jpg";
-import barPoolsideImg from "../../assets/bar-poolside.jpg";
+import barHeroImg from "../../assets/bar-hero.webp";
+import barDrinksImg from "../../assets/bar-drinks.webp";
+import barLoungeImg from "../../assets/bar-lounge.webp";
+import barPoolsideImg from "../../assets/bar-poolside.webp";
 
 export default function Resto_bar() {
   return (
@@ -21,7 +21,7 @@ export default function Resto_bar() {
             looking to slow down, whether that's a quiet evening cocktail or
             drinks with friends.
           </p>
-          <Link to="/menu" className="btn btn-gold">
+          <Link to="/foodMenu" className="btn btn-gold">
             View Menu
           </Link>
         </div>
@@ -29,6 +29,8 @@ export default function Resto_bar() {
           <img
             src={barHeroImg}
             alt="The hotel bar at Exclusive Holiday & Suites"
+            width={900}
+            height={700}
           />
         </div>
       </div>
@@ -36,7 +38,13 @@ export default function Resto_bar() {
       {/* What's on offer */}
       <div className="bar-page-offer">
         <div className="bar-page-offer-image">
-          <img src={barDrinksImg} alt="A selection of cocktails and drinks" />
+          <img
+            src={barDrinksImg}
+            alt="A selection of cocktails and drinks"
+            loading="lazy"
+            width={900}
+            height={700}
+          />
         </div>
         <div className="bar-page-offer-content">
           <span className="bar-page-eyebrow">On the Menu</span>
@@ -71,14 +79,26 @@ export default function Resto_bar() {
           </p>
         </div>
         <div className="bar-page-atmosphere-image">
-          <img src={barLoungeImg} alt="The lounge seating area" />
+          <img
+            src={barLoungeImg}
+            alt="The lounge seating area"
+            loading="lazy"
+            width={900}
+            height={700}
+          />
         </div>
       </div>
 
       {/* Poolside */}
       <div className="bar-page-poolside">
         <div className="bar-page-poolside-image">
-          <img src={barPoolsideImg} alt="Poolside drink service" />
+          <img
+            src={barPoolsideImg}
+            alt="Poolside drink service"
+            loading="lazy"
+            width={900}
+            height={700}
+          />
         </div>
         <div className="bar-page-poolside-overlay">
           <span className="bar-page-eyebrow bar-page-eyebrow-light">

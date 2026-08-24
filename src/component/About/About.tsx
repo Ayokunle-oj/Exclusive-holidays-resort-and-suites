@@ -1,10 +1,10 @@
 import "./About.css";
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import pexels_rdne from "../../assets/pexels_rdne.jpg";
-import pexels_aj_ahamad from "../../assets/pexels_aj_ahamad.jpg";
-import pexels_guillaume_dhalluin from "../../assets/pexels_guillaume_dhalluin.jpg";
-import pexels_lhthoai from "../../assets/pexels_lhthoai.jpg";
+import pexels_rdne from "../../assets/pexels_rdne.webp";
+import pexels_aj_ahamad from "../../assets/pexels_aj_ahamad.webp";
+import pexels_guillaume_dhalluin from "../../assets/pexels_guillaume_dhalluin.webp";
+import pexels_lhthoai from "../../assets/pexels_lhthoai.webp";
 
 function About() {
   const aboutRef = useRef<HTMLDivElement | null>(null);
@@ -46,7 +46,13 @@ function About() {
       <div className="about_wrapper" data-reveal="fade-up">
         <div className="about_content1" data-reveal="fade-up">
           <div className="content_img" data-reveal="fade-left">
-            <img src={pexels_rdne} alt="Exclusive Holiday and suites" />
+            <img
+              src={pexels_rdne}
+              alt="Exclusive Holiday and suites"
+              loading="lazy"
+              width={800}
+              height={650}
+            />
           </div>
           <div className="content_text" data-reveal="fade-right">
             <div className="about_title" data-reveal="fade-up">
@@ -102,13 +108,31 @@ function About() {
         </div>
         <div className="about_wrapper_2_images" data-reveal="fade-left">
           <div className="about_wrapper_2_img1" data-reveal="fade-right">
-            <img src={pexels_guillaume_dhalluin} alt="" />
+            <img
+              src={pexels_guillaume_dhalluin}
+              alt=""
+              loading="lazy"
+              width={700}
+              height={500}
+            />
           </div>
           <div className="about_wrapper_2_img2" data-reveal="fade-up">
-            <img src={pexels_aj_ahamad} alt="" />
+            <img
+              src={pexels_aj_ahamad}
+              alt=""
+              loading="lazy"
+              width={700}
+              height={500}
+            />
           </div>
           <div className="about_wrapper_2_img3" data-reveal="fade-left">
-            <img src={pexels_lhthoai} alt="" />
+            <img
+              src={pexels_lhthoai}
+              alt=""
+              loading="lazy"
+              width={700}
+              height={500}
+            />
           </div>
         </div>
       </div>

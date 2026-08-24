@@ -4,7 +4,7 @@ import {
   faEnvelope,
   faMessage,
 } from "@fortawesome/free-solid-svg-icons";
-import contactRoomImage from "../../assets/pexels_cottonbro.jpg";
+import contactRoomImage from "../../assets/pexels_cottonbro.webp";
 import "./Contact.css";
 
 function ContactForm() {
@@ -70,7 +70,13 @@ function ContactForm() {
       </div>
 
       <div className="contact_image_panel">
-        <img src={contactRoomImage} alt="Exclusive Holidays & Suites room" />
+        <img
+          src={contactRoomImage}
+          alt="Exclusive Holidays & Suites room"
+          loading="lazy"
+          width={900}
+          height={700}
+        />
       </div>
     </section>
   );

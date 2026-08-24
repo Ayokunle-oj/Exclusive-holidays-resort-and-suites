@@ -8,6 +8,7 @@ import Home from "./pages/Home_page/Home";
 import About from "./pages/About_us/About";
 import Contact from "./pages/contact/Contact";
 import Footer from "./component/Footer/Footer";
+import RestaurantMenu from "./pages/RESTO_&_BAR/menu/RestaurantMenu";
 import Booking from "./component/BookingModal/BookingModal";
 import Scroll_To_Top from "./component/Scroll_to_top/Scroll_To_Top";
 
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/room" element={<Rooms />} />
+          <Route path="/foodMenu" element={<RestaurantMenu />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/resto" element={<Resto_bar />} />
           <Route path="/event" element={<Events />} />

@@ -1,6 +1,6 @@
-import standard from "../../assets/Standard .jpg";
-import permium from "../../assets/permium.jpg";
-import deluxe from "../../assets/deluxe .jpg";
+import standard from "../../assets/Standard.webp";
+import permium from "../../assets/permium.webp";
+import deluxe from "../../assets/deluxe.webp";
 import { Link } from "react-router-dom";
 import "./Room.css";
 
@@ -69,6 +69,9 @@ function Rooms() {
           <img
             src={standard}
             alt="Standard Room at Exclusive Holidays & Suites"
+            loading="lazy"
+            width={900}
+            height={700}
           />
         </div>
       </div>
@@ -117,7 +120,13 @@ function Rooms() {
         </div>
 
         <div className="home-room-image">
-          <img src={deluxe} alt="Premium Room at Exclusive Holidays & Suites" />
+          <img
+            src={deluxe}
+            alt="Premium Room at Exclusive Holidays & Suites"
+            loading="lazy"
+            width={900}
+            height={700}
+          />
         </div>
       </div>
 
@@ -166,7 +175,13 @@ function Rooms() {
         </div>
 
         <div className="home-room-image">
-          <img src={permium} alt="Deluxe Room at Exclusive Holidays & Suites" />
+          <img
+            src={permium}
+            alt="Deluxe Room at Exclusive Holidays & Suites"
+            loading="lazy"
+            width={900}
+            height={700}
+          />
         </div>
       </div>
     </section>

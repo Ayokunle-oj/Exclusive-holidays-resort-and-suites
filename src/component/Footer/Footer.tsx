@@ -35,11 +35,6 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <Link className="a_tag" to="/event">
-                EVENTS
-              </Link>
-            </li>
-            <li>
               <Link className="a_tag" to="/resto">
                 RESTO &amp; BAR
               </Link>

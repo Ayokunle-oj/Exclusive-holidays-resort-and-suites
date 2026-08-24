@@ -12,8 +12,8 @@ import RoomSwipe from "./RoomSwipe";
 import "./Rooms.css";
 
 // Replace these with the real hotel photos when available.
-import heroRoomImg from "../../assets/pexels_alley_chien.jpg";
-import promoRoomImg from "../../assets/pexels-cottonbro-6466236.jpg";
+import heroRoomImg from "../../assets/pexels_alley_chien.webp";
+import promoRoomImg from "../../assets/pexels-cottonbro-6466236.webp";
 
 // Room benefits — edit the list here to add or remove an amenity.
 const benefits = [
@@ -82,6 +82,8 @@ const Rooms = () => {
           src={heroRoomImg}
           alt="A comfortable guest room at Exclusive Holiday & Suites"
           className="rooms-hero-image"
+          width={1600}
+          height={1100}
         />
         <div className="rooms-hero-overlay" />
         <div className="rooms-hero-content" data-reveal="up">
@@ -143,6 +145,9 @@ const Rooms = () => {
           src={promoRoomImg}
           alt="A beautifully designed room at Exclusive Holiday & Suites"
           className="rooms-promo-image"
+          loading="lazy"
+          width={1400}
+          height={1000}
         />
         <div className="rooms-promo-overlay" />
         <div className="rooms-promo-content" data-reveal="up">

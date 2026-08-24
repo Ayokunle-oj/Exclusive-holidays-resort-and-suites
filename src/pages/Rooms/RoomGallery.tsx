@@ -14,7 +14,14 @@ const RoomGallery = ({ images, alt }: RoomGalleryProps) => {
 
   return (
     <div className="room-gallery">
-      <img src={images[active]} alt={alt} className="room-gallery-image" />
+      <img
+        src={images[active]}
+        alt={alt}
+        className="room-gallery-image"
+        loading="lazy"
+        width={1200}
+        height={900}
+      />
 
       {hasMultiple && (
         <>

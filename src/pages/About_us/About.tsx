@@ -13,13 +13,13 @@ import "./About.css";
 
 // Placeholder image imports — replace these paths with the real files
 // from your assets folder when available.
-import heroImage from "../../assets/hotel_hero.jpg";
-import aboutImage from "../../assets/hotel_lobby.jpg";
-import servicesBackground from "../../assets/hotel_services_bg.jpg";
-import teamMemberOne from "../../assets/team_member_1.jpg";
-import teamMemberTwo from "../../assets/team_member_2.jpg";
-import teamMemberThree from "../../assets/team_member_3.jpg";
-import teamMemberFour from "../../assets/team_member_4.jpg";
+import heroImage from "../../assets/hotel_hero.webp";
+import aboutImage from "../../assets/hotel_lobby.webp";
+import servicesBackground from "../../assets/hotel_services_bg.webp";
+import teamMemberOne from "../../assets/team_member_1.webp";
+import teamMemberTwo from "../../assets/team_member_2.webp";
+import teamMemberThree from "../../assets/team_member_3.webp";
+import teamMemberFour from "../../assets/team_member_4.webp";
 
 const services = [
   {
@@ -107,6 +107,9 @@ const About = () => {
             src={aboutImage}
             alt="Exclusive Holiday Resort & Suites"
             className="about-hotel-image"
+            loading="lazy"
+            width={900}
+            height={700}
           />
         </div>
 
@@ -184,6 +187,9 @@ const About = () => {
                 src={member.photo}
                 alt={member.name}
                 className="about-team-photo"
+                loading="lazy"
+                width={420}
+                height={420}
               />
               <h3 className="about-team-name">{member.name}</h3>
               <p className="about-team-position">{member.position}</p>

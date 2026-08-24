@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
@@ -7,10 +7,10 @@ import {
   faCircleCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
-import avatar1 from "../../assets/reviewer-1.jpg";
-import avatar2 from "../../assets/reviewer-2.jpg";
-import avatar3 from "../../assets/reviewer-3.jpg";
-import avatar4 from "../../assets/reviewer-4.jpg";
+import avatar1 from "../../assets/reviewer-1.webp";
+import avatar2 from "../../assets/reviewer-2.webp";
+import avatar3 from "../../assets/reviewer-3.webp";
+import avatar4 from "../../assets/reviewer-4.webp";
 import "./Testimonials.css";
 
 // Dummy Google reviews — replace with real reviews later
@@ -64,10 +64,13 @@ const reviews = [
   },
 ];
 
+const AUTOPLAY_DELAY = 4000;
+
 function Testimonials() {
   const [visibleCards, setVisibleCards] = useState(4);
   const [currentIndex, setCurrentIndex] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const maxIndex = Math.max(reviews.length - visibleCards, 0);
 
@@ -88,27 +91,60 @@ function Testimonials() {
     return () => window.removeEventListener("resize", updateVisibleCards);
   }, []);
 
-  // Automatic carousel scroll every 4 seconds
+  // Keep currentIndex in range whenever visibleCards changes
+  // (e.g. resizing from desktop to mobile shrinks maxIndex)
   useEffect(() => {
-    const timer = setInterval(() => {
+    setCurrentIndex((prev) => {
+      const newMaxIndex = Math.max(reviews.length - visibleCards, 0);
+      return Math.min(prev, newMaxIndex);
+    });
+  }, [visibleCards]);
+
+  const clearAutoplay = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  }, []);
+
+  const startAutoplay = useCallback(() => {
+    clearAutoplay();
+    intervalRef.current = setInterval(() => {
       setCurrentIndex((prev) => {
         const newMaxIndex = Math.max(reviews.length - visibleCards, 0);
         return prev >= newMaxIndex ? 0 : prev + 1;
       });
-    }, 4000);
+    }, AUTOPLAY_DELAY);
+  }, [clearAutoplay, visibleCards]);
 
-    return () => clearInterval(timer);
-  }, [visibleCards]);
+  // Start autoplay on mount and whenever visibleCards changes;
+  // always clean up on unmount.
+  useEffect(() => {
+    startAutoplay();
+    return clearAutoplay;
+  }, [startAutoplay, clearAutoplay]);
 
+  // Any manual navigation resets the autoplay clock, so it doesn't
+  // fire moments later and undo what the user just did.
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+    startAutoplay();
   };
 
   const handleNext = () => {
     setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    startAutoplay();
   };
 
-  const trackOffset = currentIndex * (100 / visibleCards);
+  // translateX(%) resolves against the TRACK's own width, not the
+  // visible window's width. Each slide occupies exactly (100 /
+  // reviews.length)% of the track (that's how slide widths are set
+  // below), so shifting by `index` slides is index * (100 / N)% —
+  // independent of how many cards are visible at once. Using
+  // visibleCards here (the old formula) overshoots by a factor of
+  // (reviews.length / visibleCards), which is why it was mild on
+  // desktop (4 visible) and catastrophic on mobile (1 visible).
+  const trackOffset = (currentIndex / reviews.length) * 100;
 
   return (
     <section className="testimonials">
@@ -132,39 +168,44 @@ function Testimonials() {
           >
             {reviews.map((review, index) => (
               <div
-                className="testimonial-card"
+                className="testimonial-slide"
                 key={index}
                 style={{ width: `${100 / reviews.length}%` }}
               >
-                <div className="testimonial-avatar-wrapper">
-                  <img
-                    src={review.avatar}
-                    alt={review.name}
-                    className="testimonial-avatar"
-                  />
-                  <span className="testimonial-google-badge">
-                    <FontAwesomeIcon icon={faGoogle} />
-                  </span>
-                </div>
-
-                <h3 className="testimonial-name">{review.name}</h3>
-                <p className="testimonial-time">{review.time}</p>
-
-                <div className="testimonial-rating">
-                  {Array.from({ length: review.rating }).map((_, i) => (
-                    <FontAwesomeIcon
-                      key={i}
-                      icon={faStar}
-                      className="testimonial-star"
+                <div className="testimonial-card">
+                  <div className="testimonial-avatar-wrapper">
+                    <img
+                      src={review.avatar}
+                      alt={review.name}
+                      className="testimonial-avatar"
+                      loading="lazy"
+                      width={180}
+                      height={180}
                     />
-                  ))}
-                  <FontAwesomeIcon
-                    icon={faCircleCheck}
-                    className="testimonial-verified"
-                  />
-                </div>
+                    <span className="testimonial-google-badge">
+                      <FontAwesomeIcon icon={faGoogle} />
+                    </span>
+                  </div>
 
-                <p className="testimonial-comment">{review.comment}</p>
+                  <h3 className="testimonial-name">{review.name}</h3>
+                  <p className="testimonial-time">{review.time}</p>
+
+                  <div className="testimonial-rating">
+                    {Array.from({ length: review.rating }).map((_, i) => (
+                      <FontAwesomeIcon
+                        key={i}
+                        icon={faStar}
+                        className="testimonial-star"
+                      />
+                    ))}
+                    <FontAwesomeIcon
+                      icon={faCircleCheck}
+                      className="testimonial-verified"
+                    />
+                  </div>
+
+                  <p className="testimonial-comment">{review.comment}</p>
+                </div>
               </div>
             ))}
           </div>
